@@ -32,7 +32,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 Some of the libraries / frameworks we are using are:
 
-- [NextJS]((https://nextjs.org/docs))
+- [NextJS](https://nextjs.org/docs)
 - [React](https://react.dev/learn)
 - [Material UI](https://mui.com/material-ui/getting-started/)
 - [SWR](https://swr.vercel.app/docs/getting-started)
