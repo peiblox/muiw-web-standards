@@ -1,18 +1,18 @@
 "use client";
 
-import * as React from "react";
+import useWishlist from "@/hooks/use-wishlist";
 import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
+import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 
-import useWishlist from "@/hooks/use-wishlist";
 
 type ProductCardProps = {
   id: number;
@@ -84,13 +84,21 @@ export default function ProductCard({
         minHeight: "120px",
         alignItems: "flex-start",
       }}/>
-      <CardMedia
-        component="img"
-        height="200"
-        image={image}
-        alt={title}
-        sx={{ objectFit: "contain", padding: "1em" }}
-      />
+      <div style={{
+        backgroundColor: "#f2f2f2",
+      }}>
+        <CardMedia
+          component="img"
+          height="200"
+          image={image}
+          alt={title}
+          sx={{
+            objectFit: "contain",
+            padding: "1em",
+            mixBlendMode: "multiply"
+          }}
+        />
+      </div>
       <CardContent sx={{
         flexGrow: 1,
       }}>
@@ -98,6 +106,7 @@ export default function ProductCard({
           {description}
         </Typography>
       </CardContent>
+      <Divider />
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" onClick={handleWishlist}>
           <FavoriteIcon color={wishlist.includes(id) ? 'error': 'action'} />
